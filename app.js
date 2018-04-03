@@ -29,7 +29,8 @@ app.use(function(req, res, next){
 	global.connection = mysql.createConnection({
 	  	host     : 'localhost',
 	  	user     : 'root',
-  		database : 'er_v4_base'
+      database : 'er_v4_base',
+      password : 'root123'
 	});
 	connection.connect();
 	next();
