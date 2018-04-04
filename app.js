@@ -11,6 +11,7 @@ var helmet = require('helmet'); // protect your app from some well-known web vul
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var users_add = require('./routes/users-add');
 
 var app = express();
 
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Database connection
 app.use(function(req, res, next){
 	global.connection = mysql.createConnection({
-	  	host     : 'localhost',
+	  	host     : 'localhost', 
 	  	user     : 'root',
       database : 'er_v4_base',
       password : 'root123'
@@ -39,6 +40,7 @@ app.use(function(req, res, next){
 });
 app.use('/', index);
 app.use('/api/v1/users', users);
+app.use('/api/v1/users/add', users_add);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
