@@ -12,7 +12,7 @@ var helmet = require('helmet');
 
 // express-basic-auth basic authentication 
 //https://www.npmjs.com/package/express-basic-auth
-const basicAuth = require('express-basic-auth'); 
+const basicAuth = require('express-basic-auth'); // const cannot be reassigned
 
 
 var index = require('./routes/index');
